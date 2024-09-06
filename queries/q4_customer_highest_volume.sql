@@ -1,0 +1,17 @@
+-- Which customer had the highest order volume in the month of October 2023?
+SELECT 
+    C.NAME, 
+    SUM(S.QUANTITY) AS TOTAL_ORDER_VOLUME
+FROM 
+    TRANSFORMED_SALES_DATA S
+JOIN 
+    RAW_CUSTOMER_DATA C 
+    ON S.CUSTOMER_ID = C.ID
+WHERE 
+    S.ORDER_YEAR = 2023 
+    AND S.ORDER_MONTH = 10
+GROUP BY 
+    C.NAME
+ORDER BY 
+    TOTAL_ORDER_VOLUME DESC
+LIMIT 1;

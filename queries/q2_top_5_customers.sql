@@ -1,0 +1,16 @@
+-- What are the names of the top 5 customers by total sales amount in the year 2023?
+SELECT 
+    C.NAME, 
+    SUM(S.TOTAL_SALES_AMOUNT) AS TOTAL_AMOUNT
+FROM 
+    TRANSFORMED_SALES_DATA S
+JOIN 
+    RAW_CUSTOMER_DATA C 
+    ON S.CUSTOMER_ID = C.ID
+WHERE 
+    S.ORDER_YEAR = 2023
+GROUP BY 
+    C.NAME
+ORDER BY 
+    TOTAL_AMOUNT DESC
+LIMIT 5;

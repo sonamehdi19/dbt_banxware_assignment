@@ -1,0 +1,17 @@
+
+-- Set the database and schema context
+USE DATABASE HOME_ASSIGNMENT;
+USE SCHEMA PUBLIC;
+-- What are the top 5 products by total sales amount in the year 2023?
+SELECT 
+    PRODUCT_ID, 
+    SUM(TOTAL_SALES_AMOUNT) AS TOTAL_AMOUNT
+FROM 
+    TRANSFORMED_SALES_DATA 
+WHERE 
+    ORDER_YEAR = 2023
+GROUP BY 
+    PRODUCT_ID
+ORDER BY 
+    TOTAL_AMOUNT DESC
+LIMIT 5;
