@@ -1,6 +1,7 @@
 -- Set the database and schema context
 USE DATABASE HOME_ASSIGNMENT;
 USE SCHEMA PUBLIC;
+
 -- What are the top 5 products by total sales amount in the year 2023?
 SELECT 
     PRODUCT_ID, 
