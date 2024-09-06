@@ -66,11 +66,11 @@ dbt run
 ```
 This will create a new table called `transformed_sales_data`, which includes the following transformations:
 
-- Converts order_date's data type from varchar to date and extracts year, month, and day from it.
-- Calculates total_sales_amount for each order.
+- Converts `order_date`'s data type from `varchar` to `date` and extracts `year`, `month`, and `day` from it.
+- Calculates `total_sales_amount` for each order.
 
 ### 5. Run SQL Queries
-The project contains four key SQL queries located in the queries/ folder. You can run these manually in Snowflake:
+The project contains four key SQL queries located in the `queries/` folder. You can run these manually in Snowflake:
 
 - Top 5 Products by Total Sales in 2023
 - Top 5 Customers by Total Sales in 2023
