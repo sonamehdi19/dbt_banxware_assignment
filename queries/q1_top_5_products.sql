@@ -1,4 +1,3 @@
-
 -- Set the database and schema context
 USE DATABASE HOME_ASSIGNMENT;
 USE SCHEMA PUBLIC;
