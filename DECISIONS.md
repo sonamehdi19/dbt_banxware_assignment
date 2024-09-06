@@ -12,14 +12,15 @@ A warehouse named `compute_wh` was also created to handle query execution.
 
 ### 1.2 DBT Installation and Configuration
 DBT is installed using:
+
 ```bash 
 pip install dbt-snowflake
 ```
 Configured the `profiles.yml` to connect DBT with Snowflake and ran `dbt debug` to verify the connection.
 
 ### 1.3 DBT Project Configuration
-
 Aliases are set for the seed tables to ensure that the sales.csv and customers.csv files are loaded as raw_sales_data and raw_customer_data respectively.
+
 ```yaml
 seeds:
   dbt_banxware_assignment:
@@ -28,6 +29,7 @@ seeds:
     customers:
       alias: raw_customer_data
 ```
+
 ## 2. Data Ingestion
 
 The `dbt seed` command was used to load the `sales.csv` and `customers.csv` files into Snowflake. This created the `raw_sales_data` and `raw_customer_data` tables.
@@ -62,6 +64,7 @@ WITH sales_transformed AS (
 
 SELECT * FROM sales_transformed
 ```
+
 This configuration materializes the DBT model as a physical table in Snowflake. This means that the result of the transformation is stored as a persistent table, rather than being created as a view, to improve query performance for repeated analyses.
 
 The SQL performed the following transformations:
@@ -70,15 +73,13 @@ The SQL performed the following transformations:
 - Extracted `year`, `month`, and `day` from `order_date`.
 - Calculated `total_sales_amount` by multiplying `quantity` by `price`.
 
-
 The following command was used to run the transformation:
+
 ```bash 
 dbt run
 ```
 
 ## 4. Analytical Queries
-
-### 4.1 Queries
 The following SQL queries were created and saved in the queries/ folder:
 
 - Top 5 Products by Total Sales in 2023 (q1_top_5_products.sql)
