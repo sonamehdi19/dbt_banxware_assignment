@@ -50,6 +50,14 @@ dbt_project:
 
 Replace the placeholders (<your_snowflake_account>, etc.) with your actual Snowflake credentials.
 
+Once you've configured the profiles.yml file, you should verify that the connection to Snowflake is working correctly. To do this, use the following command from the root of the `dbt_banxware_assignment` folder:
+
+```bash
+dbt debug
+```
+
+This command will check whether DBT can successfully connect to Snowflake and will show the status of your connection.
+
 ### 3. Load Raw Data into Snowflake
 The project includes raw sales and customer data in the seeds/ folder. To load these CSV files into Snowflake, run the following command:
 
