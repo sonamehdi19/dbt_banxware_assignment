@@ -56,7 +56,7 @@ The project includes raw sales and customer data in the seeds/ folder. To load t
 ```bash
 dbt seed
 ```
-This will create two tables in Snowflake: `raw_sales_data` and `raw_customer_data`
+This will create two tables in Snowflake: `raw_sales_data` and `raw_customer_data`.
 
 ### 4. Run Data Transformation
 Run the DBT models to transform the raw sales data:
